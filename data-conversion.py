@@ -1,4 +1,7 @@
 """ data-conversion.py  |  Thomas Pasfield  |  1-20-2024
+    Do not run unless necessary! Might crash the machine if you don't
+    have a ton of RAM. (I have 32 GB, it crashed mine.)
+    
     Converts TIFF format image data into Numpy matrices. Allows easy
     export to new files.
 
@@ -18,6 +21,7 @@
 
 import numpy as np
 from libtiff import TIFF
+from scipy.ndimage import zoom
 
 
 # Initial full precision conversion to Numpy
@@ -49,3 +53,19 @@ reduced_img = reduced_img * 255  # Scale to unsigned 8 bit integers
 reduced_img = np.array(reduced_img, dtype=np.uint8)  # Convert type to uint8
 
 np.save("./NORMALIZED-RP-STACK.npy", reduced_img)
+
+
+"""
+Downsampled data conversion. DRASTICALLY reduces file size at the
+expense of resolution. Useful for testing methods.
+
+Removes 1 row and column from the edge of the image in order to 
+have even numbers.
+"""
+
+down_img = zoom(img, (0.5, 0.5, 0.5))
+np.save("DOWNSAMPLED-FULL-STACK.npy", down_img)
+
+down_reduced_img = zoom(reduced_img, (0.5, 0.5, 0.5))
+np.save("DOWNSAMPLED-RP-STACK.npy", down_reduced_img)
+

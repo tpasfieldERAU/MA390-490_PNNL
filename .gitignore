@@ -3,9 +3,8 @@
 /ERAU_tiff_stack/
 /.idea/
 /.ipynb_checkpoints/
-/2024_FULL-STACK.npy
+*.npy
 /loadTest.mlx
-/NORMALIZED-RP-STACK.npy
 
 # Ignore templates for Python and LaTeX
 
