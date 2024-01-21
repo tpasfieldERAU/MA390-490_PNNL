@@ -47,13 +47,12 @@ preserved in the reduced precision.
 """
 
 
-# TODO HAS MAJOR TRUNCATION ISSUES. WILL FIX LATER
 reduced_img = img - 9500
 reduced_img[reduced_img<0] = 0  # Removes nonnegative values, sets to zero.
 reduced_img[reduced_img>3500] = 3500  # Removes weird outliers that I can't locate
 reduced_img = reduced_img / 3500  # Normalize to [0,1]
 reduced_img = reduced_img * 255  # Scale to unsigned 8 bit integers
-reduced_img = np.array(reduced_img, dtype=np.uint8)  # Convert type to uint8
+reduced_img = (np.rint(reduced_img)).astype(np.uint8)  # Convert type to uint8
 
 np.save("./NORMALIZED-RP-STACK.npy", reduced_img)
 
