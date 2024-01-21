@@ -46,6 +46,8 @@ that contain the object. This allows more information to be
 preserved in the reduced precision.
 """
 
+
+# TODO HAS MAJOR TRUNCATION ISSUES. WILL FIX LATER
 reduced_img = img - 9500
 reduced_img[reduced_img<0] = 0  # Removes nonnegative values, sets to zero.
 reduced_img[reduced_img>3500] = 3500  # Removes weird outliers that I can't locate
