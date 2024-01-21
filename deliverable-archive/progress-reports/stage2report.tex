@@ -1,0 +1,106 @@
+\documentclass[11pt, letterpaper, notitlepage]{article}
+
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{authblk}
+\usepackage{amsmath, amssymb}
+\usepackage[hypcap=false]{caption}
+\usepackage{float}
+\graphicspath{ {./images/}}
+
+%-------------Custom Abstract Def----------------
+% Modified abstract command in order to better suit the styles common in other
+% papers in the field.
+\def\abstract{\if@twocolumn
+\section*{Abstract}
+\else
+% modified quotation macro from latex.tex
+\list{}{\listparindent 1.5em \topsep 1pt \parskip 0pt \partopsep 0pt
+ \itemindent\listparindent
+        \setlength\rightmargin{5em}
+        \setlength\leftmargin{5em}
+ \parsep 0pt plus 1pt}\item[]
+% end of modified quotation macro
+\noindent \footnotesize{\bf Abstract.}
+ \ignorespaces %  -SLK-00Mar12> 
+\fi}
+\def\endabstract{\if@twocolumn\else\endlist\fi\bigskip\smallskip}
+
+%-------------Title Details----------------------
+\title{%
+  Quantitative Analysis for Computed Tomography\\
+  \large \vspace{1em}\textbf{Stage 2 Progress Report}
+}
+
+%\author[1]{Thomas Pasfield}
+
+\author{Yianni Parachos}
+\author{Thomas Pasfield}
+\author{Dylan Pereira}
+\author{Ryan Reynolds}
+\author{Kian Greene}
+\author{Jacob Koscinski}
+
+\affil{Embry-Riddle Aeronautical University, Daytona Beach, FL}
+
+%-------------Header/Footer Modification---------
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Image Deblurring: End of Summer Progress Report}
+\fancyhead[R]{\thepage}
+\fancyfoot{}
+\setlength{\headheight}{13.59999pt}
+\addtolength{\topmargin}{-1.59999pt}
+
+
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+\begin{document}
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+\begin{multicols}{2}
+\section{Background}
+
+\section{Scope of the Problem}
+
+\section{Initial Strategy}
+
+\section{Data Visualization}
+
+\section{Metrology Methods}
+
+\section{Next Steps}
+
+\end{multicols}
+
+\end{document}
+
+% PLACEHOLDERS FOR FUTURE FIGURES
+%\begin{Figure}
+%  \centering
+%  \includegraphics[width=3in]{esf}
+%  \captionof{figure}{A demonstration of the process of determining an ESF from an image. Notice the width of the blur in the image and how it relates to the edge spread shown in the ESF plot. Note that these are optimal examples without any noise present.}
+%  \label{fig:ESF}
+%\end{Figure}
+
+
+%\vspace{1em}
+%\begin{Figure}
+%  \centering
+%  \begin{tabular}{r|r|r|r|r|r|r}
+%         & 128$^2$ & 256$^2$ & 512$^2$ & 1024$^2$ & 2048$^2$ & 4000$^2$ \\ \hline \hline
+%      Half & 0.5 GB & 8.6 GB & 137.4 GB & 2199.0 GB & 35184.4 GB & 512000.0 GB \\
+%      Single & 1.1 GB & 17.2 GB & 274.9 GB & 4398.0 GB & 70368.7 GB & 1024000.0 GB \\
+%      Double & 2.1 GB & 34.4 GB & 549.8 GB & 8796.1 GB & 140737.5 GB & 2048000.0 GB
+%  \end{tabular}
+%  \captionof{table}{A table showing the size requirements for storing matrices of various sizes and precision in memory. Its exponential growth presents a significant problem for execution. The final column represents the size of image that the Cygnus x-ray machine takes. The memory capacity needed to utilize the linear model on the full data greatly exceeds any machines that we have access to, and even that of many of the world's supercomputers.}
+%  \label{tab:size}
+%\end{Figure}
