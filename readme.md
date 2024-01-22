@@ -5,6 +5,8 @@ Repository containing code and Jupyter notebooks facilitating the data science w
 A `requirements.txt` file will be added in the future in order to aid in setting up the Python environment needed to execute the code. It is suggested that you have the following packages installed *at the bare minimum*:
 - Numpy
 - Scipy
+- `matplotlib`
+- `seaborn`
 - `itk-io`
 - `itkwidgets`
 - `jupyter`
