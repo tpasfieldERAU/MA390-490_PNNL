@@ -2,7 +2,11 @@ MA390/490 PNNL Project Spring 2024
 ---
 Repository containing code and Jupyter notebooks facilitating the data science work of our project. This repo will contain example files for working with the data and libraries in various ways.
 
-A `requirements.txt` file will be added in the future in order to aid in setting up the Python environment needed to execute the code. It is suggested that you have the following packages installed *at the bare minimum*:
+**To install all packages needed for this project, please use:** 
+
+`pip -r requirements.txt`!!
+
+If you wish to manually manage packages, here is a condensed list.
 
 Bare Minimum:
 - `numpy`
