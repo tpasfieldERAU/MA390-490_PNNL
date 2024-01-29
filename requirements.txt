@@ -1,0 +1,16 @@
+ipython
+ipywidgets
+itk
+itk-io
+itkwidgets
+jupyter
+jupyterlab-widgets
+matplotlib
+notebook
+numpy
+opencv-python
+pandas
+pillow
+scikit-learn
+scipy
+seaborn
