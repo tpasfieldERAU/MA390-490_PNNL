@@ -82,9 +82,9 @@
     CT scanning is most common in medical imaging and widely used in industrial applications. It can analyze assemblies, single objects, and internal structures. The state-of-the-art is working towards precise object dimensioning and internal defect detection.
 
 \section{Scope of the Problem}
-% This project requires our talents to enhance the processing and visualizing of CT data, which presents many of the challenges we would be facing while attempting to accomplish the company's task given to us. The first task that helped us move forward with the project was visualizing the TIFF file data type; doing so would help accomplish our main objective. 
-% 
-% The main objective is to generate 2D and 3D images, needing a lot of programming and mathematics expertise in the team the project seeks. With the images, it moves to the printing phase as we go steeper. Having the results from the CT scan, we need to differentiate between the three materials, giving us the data for it. This task would require most of our time and precision to generate data results from CT scans. It won't be an easy task for us to accomplish this promptly. Still, thankfully, with our industrial partner and many talented students, we anticipate that we will be able to accomplish the project task, which will fulfill the objective of implementing CT in their laboratory. 
+%This project requires our talents to enhance the processing and visualizing of CT data, which presents many of the challenges we would be facing while attempting to accomplish the company's task given to us. The first task that helped us move forward with the project was visualizing the TIFF file data type; doing so would help accomplish our main objective. 
+
+% The main objective is to generate 2D and 3D images, needing a lot of programming and mathematics expertise in the team the project seeks. With the images, it moves to the printing phase as we go steeper. Having the results from the CT scan, we need to differentiate between the three materials, giving us the data for it.This task would require most of our time and precision to generate data results from CT scans. It won't be an easy task for us to accomplish this promptly. Still, thankfully, with our industrial partner and many talented students, we anticipate that we will be able to accomplish the project task, which will fulfill the objective of implementing CT in their laboratory. 
 % Draft By Dylan L Pereira
 % Needs completion
 % Mention image dimensions/quantity
@@ -114,33 +114,34 @@ Even at full precision, MATLAB\cite{inc_matlab_2022} is a fast, though not excep
   \label{fig:mat3d}
 \end{Figure}
 
-% Regular ImageJ
-**PUT IMAGEJ STUFF HERE**
-In addition, the image analysis application ImageJ was used to visually inspect the data while still in its 2-D form.  By loading all of the images into the ImageJ interface as an "image stack", it was possible to visualize the internal structure of the entire 3-D object by quickly cycling through the 2-D slices. Doing this grants us a number of advantages regarding analysis of the object, as well as the 3-D printing process.  By cycling through the slices in the stack, we could see the 3-D printing process for each of the different materials used, as well as the internal quality and integrity of each 3-D printed material in its respective section of the object.  In a sense, the 2-D slice stack visible with ImageJ allowed us to watch a video of how the CT scan was completed, and how the scanning process picked up each of the different layers. . . 
-Will be done tmrw I promise! ~~Ryan
-
+% RegularImageJ
+In addition, the image analysis application ImageJ was used to visually inspect the data while still in its 2-D form.  By loading all of the images into the ImageJ interface as an "image stack", it was possible to visualize the internal structure of the entire 3-D object by quickly cycling through the 2-D slices. Doing this grants us a number of advantages regarding analysis of the object, as well as the 3-D printing process.  By cycling through the slices in the stack, we could, in a sense, "scan" up and down through the object, revealing each layer of 3-D printed material. The following figure shows one of the many 2-D slices that we were able to visualize through ImageJ:
 % Temporarily removing ImageJ image since Ryan is much better at using it than I am. I'll leave ImageJ's inclusion to him.
-%\begin{Figure}
-%  \centering
-%  \includegraphics[width=3in]{images/CTscan.png}
-%  \captionof{figure}{\emph{ImageJ provided a single slice of the scan that is coplanar to the x-y axis.}}
-%  \label{fig:imj2d}
-%\end{Figure}
+\begin{Figure}
+  \centering
+  \includegraphics[width=3in]{images/CTscan.png}
+  \captionof{figure}{\emph{A 2-D slice of the object visualized using ImageJ, which features a portion in which two materials meet.  Note the visibility of the two materials, and how the 3-D printing quality differs for each.}}
+  \label{fig:imj2d}
+\end{Figure}
+
+As shown in the figure, the 2-D visualization of the slices allowed us to see how the 3-D printing process deposits the different layers for each material as well as the internal quality and integrity of each 3-D printed material in its respective section of the object. In this specific image, it is clear that the material in the top half of the slice is more yielding to the 3-D printing process than the material used for the bottom half.
 
 % AstroImageJ
-AstroImageJ was also considered due to its different visualization features aside from ImageJ. In particular, we used the interactive 3D surface plots to map the relative intensity of the X-rays through the material.
+AstroImageJ was also considered due to its different visualization features aside from ImageJ. In particular, we used the interactive 3D surface plots to map the relative intensity of the X-rays through the different materials, which also helped visualize the separation gap between them. In particular, the example slice shown in Figure \ref{fig:aij3dline} and \ref{fig:aij3disoline} the polylactic acid and polycarbonate sections of the object, which composed the top section and the middle section, respectively.
+
+% NOTE: Determine what slice number was used for this AstroImageJ example (for clarity)
 
 \begin{Figure}
   \centering
   \includegraphics[width=3in]{images/Norm_Slice_Line_Plot_Angled.png}
-  \captionof{figure}{\emph{Angled view of image slice \#???? with normalized intensities given by the color map on the right side of the image. Here, there is a significant valley in the middle of the plot that corresponds to the gap between different materials.}}
+  \captionof{figure}{\emph{Angled view of an example AstroImageJ slice with normalized intensities given by the color map on the right side of the image. Here, there is a significant valley in the middle of the plot that corresponds to the gap between different materials.}}
   \label{fig:aij3dline}
 \end{Figure}
 
 \begin{Figure}
   \centering
   \includegraphics[width=3in]{images/Norm_Slice_Isoline_Plot_Top-Down.png}
-  \captionof{figure}{\emph{Top-down view of an image slice with normalized intensities given by the color map on the right side of the image. Here, the isoline viewer was used to account for the top-down view of slice ????.}}
+  \captionof{figure}{\emph{Top-down view of the same AstroImageJ slice as Figure \ref{fig:aij3dline} with normalized intensities given by the color map on the right side of the image. Here, the isoline viewer was used to account for the top-down view of the slice.}}
   \label{fig:aij3disoline}
 \end{Figure}
 
@@ -150,8 +151,12 @@ Python proved to be a much higher-performing and more reliable solution for visu
 Additionally, Python has an extensive wrapper for Insight Toolkit (ITK)\cite{mccormick_itk_2014}. ITK is a scientific image-processing library with extensive support and features related to our work. Within it exists a module called \verb|itkwidgets|, which adds interactive 3D visualization support. This was quite useful for the initial viewing of the data and evaluation of the normalization and down-sampling techniques. A screenshot of this visualization and its interface is in the Appendix in Figure \ref{fig:itk}.
 
 \section{Initial Strategy}
-% !!
-In order to view the scanned object 
+% Yianni
+Initially, the object will be analyzed slice by slice. By analyzing a single slice, an algorithmic process can be developed to analyze relevant features of the object. Relevant features include: voxel intensity, distance between the infill layers via voxels, and deformation and separation of each material. 
+
+By viewing a histogram of the intensity of pixels through each image, the bounds of what are considered "air" and "object" can be clearly defined. Because each of the materials hold a different intensity, the bounds of each object's "brightness" can be documented. This can be used to differentiate objects algorithmically, even when multiple materials are present within an image. 
+
+After analysis of the images directly, the images will be segmented so that they are binarized. This allows us to distinctly separate 'air' and 'object' within each image to measure infill separation and material deformation. To perform this effectively, this must be done on images with individual materials and then applied to images with multiple included materials. 
 
 \section{Metrology Methods}
 Our early dimensioning approaches are fueled almost purely by intuition rather than current literature. We are working on getting an intuitive grasp of the problem among our members. Once achieved, we will broaden our work towards directly implementing and applying existing methods. That being said, we believe that our preliminary results have some merit.
