@@ -4,7 +4,7 @@ Repository containing code and Jupyter notebooks facilitating the data science w
 
 **To install all packages needed for this project, please use:** 
 
-`pip -r requirements.txt`!!
+`pip install -r requirements.txt`
 
 If you wish to manually manage packages, here is a condensed list.
 
