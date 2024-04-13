@@ -5,6 +5,11 @@
 /.ipynb_checkpoints/
 *.npy
 /loadTest.mlx
+*.hist
+*.nc
+*.sc
+*.tmp
+*.001
 
 # Ignore templates for Python and LaTeX
 
