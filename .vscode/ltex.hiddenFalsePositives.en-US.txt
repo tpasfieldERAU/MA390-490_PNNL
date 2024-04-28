@@ -1,0 +1,1 @@
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q To improve industry support for additive manufacturing in precision applications, the lab wishes to explore applying computed tomography to the task.\\E$"}
